@@ -2,8 +2,8 @@
 const db = require('../config/db');
 const Sequelize = require('sequelize');
 
-const Promise = require('bluebird');
-const bcrypt = require('bcryptjs');
+// const Promise = require('bluebird');
+// const bcrypt = require('bcryptjs');
 
 const Users = require('./Users');
 

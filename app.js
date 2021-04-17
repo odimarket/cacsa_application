@@ -3,7 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const config = require('./config/config');
 const db = require('./config/db');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 
 // const Offices = require('./models/Offices');
 
