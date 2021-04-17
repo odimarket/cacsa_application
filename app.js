@@ -26,11 +26,11 @@ db.authenticate()
 
 require('./routes')(app);
 
-if(process.env.NODE_ENV === 'production'){
+// if(process.env.NODE_ENV === 'production'){
 app.use(express.static(__dirname + '/dist/'));
 
 app.get(/.*/, (req, res) => res.sendFile(__dirname+'/dist/index.html'))
-}
+// }
 
 const port = process.env.PORT || 8081;
 
