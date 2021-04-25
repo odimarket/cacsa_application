@@ -3,6 +3,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 const config = require('./config/config');
 const db = require('./config/db');
+const history = require('connect-history-api-fallback');
 // const cookieParser = require('cookie-parser');
 
 // const Offices = require('./models/Offices');
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(morgan('combined'));
 app.use(cors());
+app.use(history());
 
 // cookieParser middleware
 // app.use(cookieParser()); 
