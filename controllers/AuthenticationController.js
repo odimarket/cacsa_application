@@ -59,6 +59,7 @@ module.exports = {
                 });
             }
 
+            user = user.toJSON();
             let isPasswordValid = bcrypt.compareSync(password, user.password);
             if(!isPasswordValid){
                 res.json({
@@ -91,7 +92,7 @@ module.exports = {
             res.json({
                 error: 0,
                 msg: 'User logged in!',
-                user: user.toJSON()
+                user: user
             });
             
         }
