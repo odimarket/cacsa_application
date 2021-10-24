@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
-module.exports = new Sequelize('heroku_de420a8a633d30d', 'be2ec550f02752', '777b163c', {
-    host: 'us-cdbr-east-03.cleardb.com',
+module.exports = new Sequelize('heroku_0cbc024f1e49f4a', 'bb7c257fb7b29d', 'e7092645', {
+    host: 'us-cdbr-east-04.cleardb.com',
     dialect: 'mysql',
   
     pool: {
