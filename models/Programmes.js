@@ -1,35 +1,29 @@
-
-const db = require('../config/db');
-const Sequelize = require('sequelize');
-
-// const Promise = require('bluebird');
-// const bcrypt = require('bcryptjs');
-
-
-const Programmes = db.define('programmes', {
-    name: {
-        type: Sequelize.STRING
-    },
-    unit_id: {
-        type: Sequelize.INTEGER
-    },
-    day: {
-        type: Sequelize.STRING
-    },
-    time: {
-        type: Sequelize.STRING
-    },
-    image: {
-        type: Sequelize.STRING
-    },
-    description: {
-        type: Sequelize.TEXT
-    },
-    venue: {
-        type: Sequelize.STRING
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Programmes extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
     }
-});
-
-// Contents.sync();
-
-module.exports = Programmes;
+  };
+  Programmes.init({
+    name: DataTypes.STRING,
+    unit_id: DataTypes.INTEGER,
+    day: DataTypes.STRING,
+    time: DataTypes.STRING,
+    image: DataTypes.STRING,
+    description: DataTypes.TEXT,
+    venue: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'Programmes',
+  });
+  return Programmes;
+};

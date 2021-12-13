@@ -12,6 +12,7 @@ const ContentsController = require('./controllers/ContentsController');
 const AuthenticationControllerPolicy = require('./policies/AuthenticationControllerPolicy');
 module.exports = (app) => {
     // Auth Module
+
     app.post('/register',
         AuthenticationControllerPolicy.register, 
         AuthenticationController.register);

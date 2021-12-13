@@ -1,88 +1,43 @@
-
-const db = require('../config/db');
-const Sequelize = require('sequelize');
-
-// const Promise = require('bluebird');
-// const bcrypt = require('bcryptjs');
-
-// function hashPassword (user, options){
-//     const SALT_FACTOR = 8;
-
-//     let salt = bcrypt.genSaltSync(SALT_FACTOR);
-//     let hash = bcrypt.hashSync(user.password, salt);
-//     return hash;
-//     // return bcrypt
-//     //     .genSaltAsync(SALT_FACTOR)
-//     //     .then(salt => bcrypt.hashAsync(user.password, salt, null))
-//     //     .then(hash => {
-//     //         user.setDataValue('password', hash)
-//     //     })
-// }
-
-
-const Users = db.define('users', {
-    first_name: {
-        type: Sequelize.STRING
-    },
-    last_name: {
-        type: Sequelize.STRING
-    },
-    email: {
-        type: Sequelize.STRING
-    },
-    tel: {
-        type: Sequelize.STRING
-    },
-    campus_home_address: {
-        type: Sequelize.TEXT
-    },
-    home_address: {
-        type: Sequelize.TEXT
-    },
-    state: {
-        type: Sequelize.STRING
-    },
-    country: {
-        type: Sequelize.STRING
-    },
-    dob: {
-        type: Sequelize.DATEONLY
-    },
-    gender: {
-        type: Sequelize.STRING
-    },
-    dept: {
-        type: Sequelize.STRING
-    },
-    level: {
-        type: Sequelize.STRING
-    },
-    programme: {
-        type: Sequelize.STRING
-    },
-    password: {
-        type: Sequelize.STRING
-    },
-    profile_picture: {
-        type: Sequelize.STRING
-    },
-    units: {
-        type: Sequelize.STRING
-    },
-    role: {
-        type: Sequelize.STRING
-    },
-    email_verified: {
-        type: Sequelize.INTEGER
-    },
-    status: {
-        type: Sequelize.INTEGER
-    },
-    token: {
-        type: Sequelize.STRING
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Users extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
     }
-});
-
-// Users.sync();
-
-module.exports = Users;
+  };
+  Users.init({
+    first_name: DataTypes.STRING,
+    last_name: DataTypes.STRING,
+    user_no: DataTypes.STRING,
+    email: DataTypes.STRING,
+    tel: DataTypes.STRING,
+    campus_home_address: DataTypes.TEXT,
+    home_address: DataTypes.TEXT,
+    state: DataTypes.STRING,
+    country: DataTypes.STRING,
+    dob: DataTypes.DATE,
+    gender: DataTypes.STRING,
+    dept: DataTypes.STRING,
+    level: DataTypes.STRING,
+    programme: DataTypes.STRING,
+    password: DataTypes.STRING,
+    profile_picture: DataTypes.STRING,
+    units: DataTypes.STRING,
+    role: DataTypes.STRING,
+    email_verified: DataTypes.INTEGER,
+    status: DataTypes.INTEGER,
+    token: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'Users',
+  });
+  return Users;
+};

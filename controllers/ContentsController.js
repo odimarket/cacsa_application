@@ -1,5 +1,5 @@
 const Contents = require('../models/Contents');
-const Contents_details = require('../models/Contents_details');
+const Contents_details = require('../models').Contents_details;
 
 module.exports = {
     

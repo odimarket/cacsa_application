@@ -1,4 +1,4 @@
-const Users = require('../models/Users');
+const Users = require('../models').Users;
 const bcrypt = require('bcryptjs');
 
 const jwt = require('jsonwebtoken');
@@ -59,7 +59,6 @@ module.exports = {
                 });
             }
 
-            user = user.toJSON();
             let isPasswordValid = bcrypt.compareSync(password, user.password);
             if(!isPasswordValid){
                 res.json({
@@ -105,7 +104,7 @@ module.exports = {
     
     async user(req, res){
 
-        const user = await Users.findOne({where: {id: req.params.id}});
+        const user = await Users.findOne({where: {user_no: req.params.id}});
 
         if (user !== null) {
             res.json({
