@@ -18,7 +18,7 @@ module.exports = (app) => {
         res.render("unit", {
             pathname: 'units',
             unit: req.params.unit,
-            drama_coord: 'IYA ERE.jpg',
+            drama_coord: 'BABA ERE.jpg',
             choir_coord: 'CM.jpg',
             prayer_coord: 'BABA ADURA.jpg',
             org_male: 'DADDY ORG.jpg',
